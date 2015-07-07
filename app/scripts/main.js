@@ -1,5 +1,10 @@
 /* datepicker */
-$('.datepicker').datepicker({});
+$('.datepicker').datepicker({
+    format: "dd/mm/yyyy"
+});
+
+/* placeholder */
+$('input, textarea').placeholder();
 
 /* multiple images carousel */
 (function($) {

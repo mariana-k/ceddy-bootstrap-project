@@ -19,7 +19,7 @@
     <!-- endbuild -->    
   </head>
   <body>
-    <!--[if lt IE 10]>
+    <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
@@ -27,15 +27,33 @@
     <header class="header">
       <div class="container">
         <nav class="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <div class="text-muted navbar-brand logo">
+                <a href="/"><span>Germany</span></a>
+              </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Start <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">Restaurant</a></li>
+                <li><a href="#">Conference</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
         </nav>
-        <div class="text-muted logo">
-          <a href="/"><span>Germany</span></a>
-        </div>
       </div>
     </header><!-- Header - end -->
     <!-- Main - start -->
@@ -43,16 +61,16 @@
       <!-- Carousel - start -->
       <section class="carousel hero-carousel slide" data-ride="carousel">
         <div class="carousel-inner hero-carousel-inner" role="listbox">
-          <div class="item item1 active">
+          <div class="item active">
             <article class="slide-content">
-              <h3>Hello Work</h3>
+              <h3>Hello Work - Slide 1</h3>
               <h2>Test HTML+CSS</h2>
               <h5>My best template</h5>
             </article>
           </div>
-          <div class="item item1">
+          <div class="item">
             <article class="slide-content">
-              <h3>Hello Work</h3>
+              <h3>Hello Work - Slide 2</h3>
               <h2>Test HTML+CSS</h2>
               <h5>My best template</h5>
             </article>
@@ -66,17 +84,17 @@
             <form action="#">
               <div>
                 <label>Arrival</label>
-                <input class="datepicker" type="text" placeholder="mm/dd/yyyy" />
+                <span class="input-wrapper"><input class="datepicker" type="text" placeholder="mm/dd/yyyy" /></span>
               </div>
               <div>
                 <label>Departure</label>
-                <input class="datepicker" type="text" placeholder="mm/dd/yyyy" />
+                <span class="input-wrapper"><input class="datepicker" type="text" placeholder="mm/dd/yyyy" /></span>
               </div>
               <div>
                 <label>Room Type</label>
                 <div class="dropdown-toggle-wrapper">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="caret"></span>
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i class="fa fa-angle-down"></i>
                     Standard Single Room
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -200,6 +218,7 @@
                 <li class="microwave"></li>
                 <li class="wi-fi"></li>
                 <li class="hot-drinks"></li>
+
               </ul>
             </div>
           </div>
@@ -227,16 +246,16 @@
           </div>
           <div class="col-xs-3">
               <h5>Latest news</h5>
-              <p>Grand Hotel joins DeluxeHotels
+              <p><a href="#">Grand Hotel joins DeluxeHotels</a>
                 <span>15 aug</span>
               </p>
-              <p>Happy Christmas To Everyone
+              <p><a href="#">Happy Christmas To Everyone</a>
                 <span>15 aug</span>
               </p>
-              <p>Best Places To Visit 2014
+              <p><a href="#">Best Places To Visit 2014</a>
                 <span>15 aug</span>
               </p>
-              <p>Various Offers
+              <p><a href="#">Various Offers</a>
                 <span>15 aug</span>
               </p>
           </div>
@@ -269,29 +288,24 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/bootstrap-sass-datepicker/js/bootstrap-sass-datepicker.js"></script>
+    <script src="/bower_components/jquery-placeholder/jquery.placeholder.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     
     <!-- build:js(.) scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/scripts/lib/jquery.jcarousel.min.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <!-- endbuild -->
     
+    <!-- scripts/lib folder - manually added plugins - start -->
+    <script src="scripts/lib/jquery.jcarousel.min.js"></script>
+    <!-- end -->
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
   </body>
 </html>
